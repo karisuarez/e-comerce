@@ -38,12 +38,14 @@ function sortCategories(criteria, array){
 function showCategoriesList(){
 
     let htmlContentToAppend = "";
+//For que recorre el arreglo de categorias 
     for(let i = 0; i < currentCategoriesArray.length; i++){
         let category = currentCategoriesArray[i];
 
+        //Si la cantidad de categorias de productos está entre el minCount o el maxCount
         if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
-
+//True - Entro al if
             htmlContentToAppend += `
             <a href="category-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
@@ -60,9 +62,9 @@ function showCategoriesList(){
                 </div>
             </a>
             `
-        }
+        }// Agrego los valores de los objetos en los divs 
 
-        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+        document.getElementById("cat-list-container").innerHTML = htmlContentToAppend // lleva todos los datos al contenedor
     }
 }
 
@@ -114,11 +116,11 @@ document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("rangeFilterCount").addEventListener("click", function(){
         //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
         //de productos por categoría.
-        minCount = document.getElementById("rangeFilterCountMin").value;
+        minCount = document.getElementById("rangeFilterCountMin").value; //Obtengo el valor del input
         maxCount = document.getElementById("rangeFilterCountMax").value;
 
-        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
-            minCount = parseInt(minCount);
+        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){ //Si no es vacio o un esoacui, si es un numero vacio o mayor o iguala a 0
+            minCount = parseInt(minCount);//Parse int lo convierte a int ("1"=> 1)
         }
         else{
             minCount = undefined;

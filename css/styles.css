@@ -19,6 +19,7 @@
   font-weight: bold;
 }
 
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
@@ -138,4 +139,33 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.login {
+  vertical-align: middle;
+  border-style: none;
+  width: 50%;
+}
+form{
+  background-color: #fff;
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 70px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);}
+
+   .ingresar{
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #229fbc;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  }
+  .texto-borde {
+-webkit-text-stroke: 2px #229fbc;
+ color: transparent; 
 }
